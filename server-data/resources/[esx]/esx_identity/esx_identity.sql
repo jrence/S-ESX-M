@@ -1,4 +1,4 @@
-USE `essentialmode`;
+USE `extendedmode`;
 
 ALTER TABLE `users`
 	ADD COLUMN `firstname` VARCHAR(50) NULL DEFAULT '',
