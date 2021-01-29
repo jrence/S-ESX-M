@@ -31,4 +31,4 @@ files {
 	'html/style.css'
 }
 
-dependency 'es_extended'
+dependency 'extendedmode'
