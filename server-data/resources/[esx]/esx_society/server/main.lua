@@ -71,26 +71,6 @@ AddEventHandler('esx_society:withdrawMoney', function(societyName, amount)
 				account.removeMoney(amount)
 				xPlayer.addMoney(amount)
 				xPlayer.showNotification(_U('have_withdrawn', ESX.Math.GroupDigits(amount)))
-				if society.name == 'mechanic' then
-					exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ withdrawn $'..ESX.Math.GroupDigits(amount)..' from society money.', xPlayer.source, 0, '16711680', 'mechsoc')
-					exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ withdrawn $'..ESX.Math.GroupDigits(amount)..' from society money.', xPlayer.source, 0, '262399', 'devmech')
-
-
-				elseif society.name == 'police' then
-				exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ withdrawn $'..ESX.Math.GroupDigits(amount)..' from society money.', xPlayer.source, 0, '16711680', 'pdsoc')
-				exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ withdrawn $'..ESX.Math.GroupDigits(amount)..' from society money.', xPlayer.source, 0, '262399', 'pddev')
-
-
-				elseif society.name == 'ambulance' then
-				exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ withdrawn $'..ESX.Math.GroupDigits(amount)..' from society money.', xPlayer.source, 0, '16711680', 'ambulsoc')
-				exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ withdrawn $'..ESX.Math.GroupDigits(amount)..' from society money.', xPlayer.source, 0, '262399', 'devambul')
-				elseif society.name == 'cardealer' then
-				exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ withdrawn $'..ESX.Math.GroupDigits(amount)..' from society money.', xPlayer.source, 0, '16711680', 'societycardealerwithdraw')
-				elseif society.name == 'taxi' then
-				exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ withdrawn $'..ESX.Math.GroupDigits(amount)..' from society money.', xPlayer.source, 0, '16711680', 'SocietyTaxiwithdraw')
-				elseif society.name == 'goverment' then
-				exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ withdrawn $'..ESX.Math.GroupDigits(amount)..' from society money.', xPlayer.source, 0, '16711680', 'devGOV')
-				end
 			else
 				xPlayer.showNotification(_U('invalid_amount'))
 			end
@@ -114,26 +94,7 @@ AddEventHandler('esx_society:depositMoney', function(societyName, amount)
 					
 			end)
 			xPlayer.showNotification(_U('have_deposited', ESX.Math.GroupDigits(amount)))
-			if society.name == 'mechanic' then
-				exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ deposited $'..ESX.Math.GroupDigits(amount)..' to society money.', xPlayer.source, 0, '64042', 'mechsoc')
-				exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ from $'..ESX.Math.GroupDigits(amount)..' from society money.', xPlayer.source, 0, '262399', 'devmech')
-
-
-			elseif society.name == 'police' then
-				exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ from $'..ESX.Math.GroupDigits(amount)..' to society money.', xPlayer.source, 0, '64042', 'pdsoc')
-				exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ from $'..ESX.Math.GroupDigits(amount)..' from society money.', xPlayer.source, 0, '262399', 'pddev')
-
-
-			elseif society.name == 'ambulance' then
-				exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ deposited $'..ESX.Math.GroupDigits(amount)..' to society money.', xPlayer.source, 0, '64042', 'ambulsoc')
-				exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ deposited $'..ESX.Math.GroupDigits(amount)..' from society money.', xPlayer.source, 0, '262399', 'devambul')
-			elseif society.name == 'cardealer' then
-				exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ deposited $'..ESX.Math.GroupDigits(amount)..' to society money.', xPlayer.source, 0, '64042', 'devSocietyCardealerdeposit')
-			elseif society.name == 'taxi' then
-				exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ deposited $'..ESX.Math.GroupDigits(amount)..' to society money.', xPlayer.source, 0, '64042', 'SocietyTaxiDeposite')
-			elseif society.name == 'goverment' then
-				exports.JD_logs:discord('__**'..GetPlayerName(xPlayer.source)..'**__ deposited $'..ESX.Math.GroupDigits(amount)..' to society money.', xPlayer.source, 0, '64042', 'devGOV')
-		end
+			
 		else
 			xPlayer.showNotification(_U('invalid_amount'))
 		end
